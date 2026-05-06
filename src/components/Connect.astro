@@ -14,12 +14,55 @@ import { connect } from "../content/copy";
       </h2>
     </div>
 
-    <a
-      href={`mailto:${connect.email}`}
-      class="inline-block font-display text-2xl sm:text-3xl text-accent-gold border-b-2 border-accent-gold pb-1 hover:text-ink hover:border-ink transition-colors"
-    >
-      {connect.email}
-    </a>
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-3">
+      <a
+        href={`mailto:${connect.email}`}
+        class="inline-block font-display text-2xl sm:text-3xl text-accent-gold border-b-2 border-accent-gold pb-1 hover:text-ink hover:border-ink transition-colors"
+      >
+        {connect.email}
+      </a>
+      <button
+        type="button"
+        id="copy-email"
+        data-email={connect.email}
+        class="font-mono text-eyebrow tracking-[0.2em] uppercase text-muted border border-rule rounded-full px-4 py-2 hover:text-ink hover:border-ink transition-colors"
+      >
+        <span data-label="default">Copy</span>
+        <span data-label="copied" class="hidden">Copied ✓</span>
+      </button>
+    </div>
+
+    <script>
+      const btn = document.getElementById("copy-email");
+      if (btn) {
+        btn.addEventListener("click", async () => {
+          const email = btn.dataset.email ?? "";
+          try {
+            await navigator.clipboard.writeText(email);
+          } catch {
+            // Fallback: ancient browsers — select a temp textarea
+            const ta = document.createElement("textarea");
+            ta.value = email;
+            ta.style.position = "fixed";
+            ta.style.opacity = "0";
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand("copy"); } catch {}
+            document.body.removeChild(ta);
+          }
+          const def = btn.querySelector<HTMLElement>('[data-label="default"]');
+          const ok = btn.querySelector<HTMLElement>('[data-label="copied"]');
+          if (def && ok) {
+            def.classList.add("hidden");
+            ok.classList.remove("hidden");
+            setTimeout(() => {
+              def.classList.remove("hidden");
+              ok.classList.add("hidden");
+            }, 1800);
+          }
+        });
+      }
+    </script>
 
     <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-xl">
       {connect.brandSocials.map((b) => (
