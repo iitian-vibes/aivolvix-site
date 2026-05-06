@@ -1,0 +1,26 @@
+---
+import { brands } from "../content/copy";
+import BrandCard from "./BrandCard.tsx";
+---
+<section class="px-6 sm:px-10 py-20 sm:py-28" id="brands">
+  <div class="max-w-5xl mx-auto">
+    <p class="font-mono text-eyebrow tracking-[0.2em] uppercase text-muted mb-3">
+      02 — Portfolio
+    </p>
+    <h2 class="font-display text-[clamp(1.75rem,4.5vw,2.5rem)] leading-[1.1] tracking-[-0.02em] text-ink mb-12 sm:mb-16">
+      Two brands. <em class="italic font-normal">One studio.</em>
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+      {brands.items.map((b) => (
+        <BrandCard
+          client:visible
+          name={b.name}
+          tagline={b.tagline}
+          url={b.url}
+          preview={b.preview}
+        />
+      ))}
+    </div>
+  </div>
+</section>

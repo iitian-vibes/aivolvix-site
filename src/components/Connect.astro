@@ -1,0 +1,32 @@
+---
+import { connect } from "../content/copy";
+---
+<section class="px-6 sm:px-10 py-20 sm:py-28 border-t border-rule" id="connect">
+  <div class="max-w-3xl mx-auto">
+    <p class="font-mono text-eyebrow tracking-[0.2em] uppercase text-muted mb-3">
+      06 — {connect.eyebrow}
+    </p>
+    <h2 class="font-display text-[clamp(1.75rem,5vw,3rem)] leading-[1.05] tracking-[-0.02em] text-ink font-light mb-10">
+      For partnerships, press,
+      <br />
+      <span class="font-light">or to <em class="italic font-normal">say hi.</em></span>
+    </h2>
+
+    <a
+      href={`mailto:${connect.email}`}
+      class="inline-block font-display text-2xl sm:text-3xl text-accent-gold border-b-2 border-accent-gold pb-1 hover:text-ink hover:border-ink transition-colors"
+    >
+      {connect.email}
+    </a>
+
+    <p class="mt-10 font-mono text-eyebrow tracking-[0.2em] uppercase text-muted">
+      Also on
+      {connect.socials.map((s, i) => (
+        <span>
+          {i > 0 && " · "}
+          <a href={s.url} target="_blank" rel="noopener noreferrer" class="text-ink hover:text-accent-gold">{s.name}</a>
+        </span>
+      ))}
+    </p>
+  </div>
+</section>

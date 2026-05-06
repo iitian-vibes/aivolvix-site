@@ -1,0 +1,29 @@
+---
+import { founders } from "../content/copy";
+---
+<section class="px-6 sm:px-10 py-20 sm:py-28 border-t border-rule" id="founders">
+  <div class="max-w-5xl mx-auto">
+    <p class="font-mono text-eyebrow tracking-[0.2em] uppercase text-muted mb-3">
+      04 — {founders.eyebrow}
+    </p>
+    <h2 class="font-display text-[clamp(1.75rem,4.5vw,2.5rem)] leading-[1.1] tracking-[-0.02em] text-ink mb-12 sm:mb-16">
+      <em class="italic font-normal">Two founders.</em> One thesis.
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+      {founders.people.map((p) => (
+        <article class="bg-card border border-rule rounded-xl p-6 sm:p-8">
+          <h3 class="font-display text-xl sm:text-2xl font-bold text-ink leading-tight border-b-2 border-accent-gold inline-block pb-1">
+            {p.name}
+          </h3>
+          <p class="mt-3 font-mono text-eyebrow tracking-[0.2em] uppercase text-muted">
+            {p.role}
+          </p>
+          <p class="mt-5 text-body leading-[1.7]">
+            {p.bio}
+          </p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
