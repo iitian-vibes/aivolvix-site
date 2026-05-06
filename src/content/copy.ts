@@ -106,7 +106,7 @@ export const connect = {
 
 export const footer = {
   company: "Aivolvix Private Limited",
-  registration: "Registered in India · CIN forthcoming",
+  registration: "Registered in Chhattisgarh, India · CIN U74101CT2026PTC019601",
   directors: "Directors: Arun Raghav S, Anurag Kumar Bharti",
   email: "hello@aivolvix.in",
   links: [{ name: "Legal", href: "/legal" }],
@@ -115,11 +115,21 @@ export const footer = {
 
 export const legalPage = {
   title: "Legal",
-  body: [
-    "Aivolvix Private Limited is a private company incorporated under the Companies Act, 2013, in India.",
-    "Registered office: To be updated upon registration filing.",
-    "Corporate Identification Number (CIN): To be updated.",
-    "Directors: Arun Raghav S, Anurag Kumar Bharti.",
-    "For all corporate, partnership, or press inquiries: hello@aivolvix.in.",
+  intro:
+    "Aivolvix Private Limited is a private company limited by shares, incorporated under the Companies Act, 2013, in the State of Chhattisgarh, India.",
+  details: [
+    { label: "Legal name", value: "Aivolvix Private Limited" },
+    { label: "Corporate Identification Number (CIN)", value: "U74101CT2026PTC019601" },
+    { label: "Permanent Account Number (PAN)", value: "ABECA7206J" },
+    { label: "Goods & Services Tax Identification (GSTIN)", value: "22ABECA7206J1ZX" },
+    {
+      label: "Registered office",
+      value:
+        "Block 7, Sai Heritage Home, Phase-1, Street-3, Ashish Nagar, West Risali, Civic Centre Bhilai, Durg – 490006, Chhattisgarh, India",
+    },
+    { label: "Directors", value: "Arun Raghav S · Anurag Kumar Bharti" },
+    { label: "Corporate contact", value: "hello@aivolvix.in" },
   ],
+  closing:
+    "For partnership, press, vendor, or B2B inquiries, please reach us at hello@aivolvix.in. Brand-specific customer support is handled directly by the respective brand: support@iitianvibes.com or hello@crayonz.ai.",
 };

@@ -13,9 +13,24 @@ import { legalPage } from "../content/copy";
         <em class="italic font-normal">{legalPage.title}.</em>
       </h1>
 
-      <div class="space-y-5 text-body text-base sm:text-lg leading-[1.7]">
-        {legalPage.body.map((p) => <p>{p}</p>)}
-      </div>
+      <p class="text-body text-base sm:text-lg leading-[1.7] mb-12">
+        {legalPage.intro}
+      </p>
+
+      <dl class="grid grid-cols-1 sm:grid-cols-[max-content_1fr] gap-x-8 gap-y-5 mb-12 text-base">
+        {legalPage.details.map((d) => (
+          <Fragment>
+            <dt class="font-mono text-eyebrow tracking-[0.2em] uppercase text-muted pt-1">
+              {d.label}
+            </dt>
+            <dd class="text-body leading-[1.7]">{d.value}</dd>
+          </Fragment>
+        ))}
+      </dl>
+
+      <p class="text-body text-base sm:text-lg leading-[1.7] pt-8 border-t border-rule">
+        {legalPage.closing}
+      </p>
 
       <p class="mt-12">
         <a href="/" class="font-mono text-eyebrow tracking-[0.2em] uppercase text-accent-gold hover:text-ink transition-colors">
