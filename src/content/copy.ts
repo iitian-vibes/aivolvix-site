@@ -61,13 +61,13 @@ export const founders = {
   people: [
     {
       name: "Arun Raghav S",
-      role: "Co-founder · CTO",
-      bio: "IIT student. Builds the AI, design, and engineering side of Aivolvix. Background in 3D / WebGL and AI-driven product. Portfolio at arunraghavdev.com.",
+      role: "Co-founder · Engineering & AI",
+      bio: "IIT student. Engineer first. Owns the AI, design tooling, and product engineering side of Aivolvix. Background in 3D / WebGL and AI-driven products. Portfolio at arunraghavdev.com.",
     },
     {
       name: "Anurag Kumar Bharti",
-      role: "Co-founder · CEO",
-      bio: "IIT student. Brand, ops, growth. Drove the IITian Vibes launch from IIT Jodhpur in 2023, now extending across 23 IITs.",
+      role: "Co-founder · Brand & Growth",
+      bio: "IIT student. Writes code, but spends most days on brand, ops, and growth. Drove the IITian Vibes launch from IIT Jodhpur in 2023, now extending across 23 IITs.",
     },
   ],
 };
