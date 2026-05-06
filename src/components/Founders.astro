@@ -24,6 +24,21 @@ import { founders } from "../content/copy";
           <p class="mt-5 text-body leading-[1.7]">
             {p.bio}
           </p>
+          <p class="mt-5 font-mono text-eyebrow tracking-[0.2em] uppercase text-muted">
+            {p.links.map((l, i) => (
+              <span>
+                {i > 0 && <span class="text-rule"> · </span>}
+                <a
+                  href={l.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-accent-gold hover:text-ink transition-colors"
+                >
+                  {l.name}
+                </a>
+              </span>
+            ))}
+          </p>
         </article>
       ))}
     </div>
