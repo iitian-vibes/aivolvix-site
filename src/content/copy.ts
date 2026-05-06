@@ -2,7 +2,7 @@ export const meta = {
   siteName: "Aivolvix",
   title: "Aivolvix — A studio building the brands of tomorrow",
   description:
-    "Aivolvix Private Limited is a young Indian consumer-tech studio. Parent of IITian Vibes (college merch) and Crayonz (AI-native design). Founded 2023.",
+    "Aivolvix Private Limited is a young Indian consumer-tech studio. Parent of IITian Vibes (college merch brand) and Crayonz (creator marketplace + AI design SaaS). Founded 2023.",
   url: "https://aivolvix.in",
   ogImage: "/og.jpg",
   twitter: "@aivolvix",
@@ -28,7 +28,7 @@ export const brands = {
     {
       slug: "crayonz",
       name: "Crayonz",
-      tagline: "AI-native design studio for college merch.",
+      tagline: "Creator marketplace, AI design studio, and merch SaaS.",
       url: "https://crayonz.ai",
       preview: "/brands/crayonz.png",
     },
