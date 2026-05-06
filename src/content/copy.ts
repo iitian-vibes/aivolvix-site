@@ -98,7 +98,7 @@ export const connect = {
       brand: "IITian Vibes",
       links: [
         { name: "Instagram", url: "https://www.instagram.com/iitian.vibess/" },
-        { name: "LinkedIn", url: "https://www.linkedin.com/company/iitian-vibes-400093337" },
+        { name: "LinkedIn", url: "https://www.linkedin.com/in/iitian-vibes-400093337/" },
       ],
     },
     {
