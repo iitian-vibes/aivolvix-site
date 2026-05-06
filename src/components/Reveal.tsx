@@ -18,11 +18,12 @@ export default function Reveal({ children, delay = 0, className = "" }: Props) {
     }
     const node = ref.current;
     if (!node) return;
+    let timer: ReturnType<typeof setTimeout> | undefined;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setTimeout(() => setVisible(true), delay);
+            timer = setTimeout(() => setVisible(true), delay);
             observer.unobserve(entry.target);
           }
         });
@@ -30,7 +31,10 @@ export default function Reveal({ children, delay = 0, className = "" }: Props) {
       { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
     );
     observer.observe(node);
-    return () => observer.disconnect();
+    return () => {
+      if (timer) clearTimeout(timer);
+      observer.disconnect();
+    };
   }, [delay]);
 
   return (
