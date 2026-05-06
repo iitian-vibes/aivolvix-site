@@ -1,16 +1,19 @@
 ---
 import { connect } from "../content/copy";
+import Reveal from "./Reveal.tsx";
 ---
 <section class="px-6 sm:px-10 py-20 sm:py-28 border-t border-rule" id="connect">
   <div class="max-w-3xl mx-auto">
-    <p class="font-mono text-eyebrow tracking-[0.2em] uppercase text-muted mb-3">
-      06 — {connect.eyebrow}
-    </p>
-    <h2 class="font-display text-[clamp(1.75rem,5vw,3rem)] leading-[1.05] tracking-[-0.02em] text-ink font-light mb-10">
-      For partnerships, press,
-      <br />
-      <span class="font-light">or to <em class="italic font-normal">say hi.</em></span>
-    </h2>
+    <Reveal client:visible>
+      <p class="font-mono text-eyebrow tracking-[0.2em] uppercase text-muted mb-3">
+        06 — {connect.eyebrow}
+      </p>
+      <h2 class="font-display text-[clamp(1.75rem,5vw,3rem)] leading-[1.05] tracking-[-0.02em] text-ink font-light mb-10">
+        For partnerships, press,
+        <br />
+        <span class="font-light">or to <em class="italic font-normal">say hi.</em></span>
+      </h2>
+    </Reveal>
 
     <a
       href={`mailto:${connect.email}`}

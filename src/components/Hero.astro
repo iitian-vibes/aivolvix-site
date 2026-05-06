@@ -22,3 +22,26 @@ import { hero } from "../content/copy";
 
   <!-- Subtle parallax — JS in Phase 4 -->
 </section>
+
+<script>
+  const hero = document.querySelector<HTMLElement>(".hero");
+  const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (hero && isDesktop && !reduced) {
+    const heading = hero.querySelector<HTMLElement>("h1");
+    if (heading) {
+      const onMove = (e: MouseEvent) => {
+        const rect = hero.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        heading.style.transform = `translate(${x * 6}px, ${y * 6}px)`;
+      };
+      const onLeave = () => {
+        heading.style.transform = "";
+      };
+      hero.addEventListener("mousemove", onMove);
+      hero.addEventListener("mouseleave", onLeave);
+    }
+  }
+</script>

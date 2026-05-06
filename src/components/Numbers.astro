@@ -1,14 +1,17 @@
 ---
 import { numbers } from "../content/copy";
+import Reveal from "./Reveal.tsx";
 ---
 <section class="px-6 sm:px-10 py-20 sm:py-28 border-t border-rule" id="numbers">
   <div class="max-w-5xl mx-auto">
-    <p class="font-mono text-eyebrow tracking-[0.2em] uppercase text-muted mb-3">
-      05 — {numbers.eyebrow}
-    </p>
-    <h2 class="font-display text-[clamp(1.75rem,4.5vw,2.5rem)] leading-[1.1] tracking-[-0.02em] text-ink mb-12 sm:mb-16">
-      <em class="italic font-normal">Receipts.</em>
-    </h2>
+    <Reveal client:visible>
+      <p class="font-mono text-eyebrow tracking-[0.2em] uppercase text-muted mb-3">
+        05 — {numbers.eyebrow}
+      </p>
+      <h2 class="font-display text-[clamp(1.75rem,4.5vw,2.5rem)] leading-[1.1] tracking-[-0.02em] text-ink mb-12 sm:mb-16">
+        <em class="italic font-normal">Receipts.</em>
+      </h2>
+    </Reveal>
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6" id="numbers-grid">
       {numbers.stats.map((s) => {
