@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors — see spec § 2.1 */
+  --color-bone: #f5f3ee;
+  --color-card: #ffffff;
+  --color-ink: #1a1a1a;
+  --color-body: #3d3a35;
+  --color-muted: #6b6258;
+  --color-accent-gold: #7a5c2e;
+  --color-rule: #e0d9cb;
+
+  /* Fonts */
+  --font-display: "Source Serif 4", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Display sizes */
+  --text-display-xl: 4.5rem;     /* 72px hero on desktop */
+  --text-display-lg: 3rem;       /* 48px section displays */
+  --text-display-md: 2rem;       /* 32px on mobile hero */
+  --text-eyebrow: 0.6875rem;     /* 11px tracked labels */
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+  background: var(--color-bone);
+  color: var(--color-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Focus rings — deep gold, accessible */
+:focus-visible {
+  outline: 2px solid var(--color-accent-gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Reveal animation utility — used by Reveal.tsx */
+.reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 500ms ease-out, transform 500ms ease-out;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero load animation */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-line {
+  animation: heroFadeUp 700ms ease-out both;
+}
+
+.hero-line:nth-child(1) { animation-delay: 0ms; }
+.hero-line:nth-child(2) { animation-delay: 60ms; }
+.hero-line:nth-child(3) { animation-delay: 120ms; }
