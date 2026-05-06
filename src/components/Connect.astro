@@ -21,14 +21,29 @@ import { connect } from "../content/copy";
       {connect.email}
     </a>
 
-    <p class="mt-10 font-mono text-eyebrow tracking-[0.2em] uppercase text-muted">
-      Also on
-      {connect.socials.map((s, i) => (
-        <span>
-          {i > 0 && " · "}
-          <a href={s.url} target="_blank" rel="noopener noreferrer" class="text-ink hover:text-accent-gold">{s.name}</a>
-        </span>
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-xl">
+      {connect.brandSocials.map((b) => (
+        <div>
+          <p class="font-mono text-eyebrow tracking-[0.2em] uppercase text-muted mb-2">
+            Follow {b.brand}
+          </p>
+          <p class="text-body">
+            {b.links.map((l, i) => (
+              <span>
+                {i > 0 && <span class="text-muted"> · </span>}
+                <a
+                  href={l.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-ink hover:text-accent-gold transition-colors"
+                >
+                  {l.name}
+                </a>
+              </span>
+            ))}
+          </p>
+        </div>
       ))}
-    </p>
+    </div>
   </div>
 </section>

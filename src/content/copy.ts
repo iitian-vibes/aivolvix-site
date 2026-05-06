@@ -37,12 +37,23 @@ export const brands = {
 
 export const work = {
   eyebrow: "The work",
-  display: "Brand · Design · AI · Software · POD.",
-  paragraphs: [
-    "We start with brand. Every product, every page, every line of copy is built from a clear point of view about who it's for and why it deserves to exist. Heritage cues, modern execution, no shortcuts on quality.",
-    "We build our own AI and design tools. Generative image pipelines, virtual try-on, automated mockup rendering, design quality scoring — all running in-house so our brands ship faster and ship sharper than anyone treating AI as a bolt-on.",
-    "We own the commerce stack end-to-end. Custom storefronts on Cloudflare, Supabase for data, Cashfree for payments, Qikink for sub-three-day campus delivery across India. Built to scale from day one.",
+  display: "Two distinct bets on consumer commerce.",
+  brands: [
+    {
+      name: "IITian Vibes",
+      url: "iitianvibes.com",
+      paragraph:
+        "Premium college merchandise for India's top engineering campuses. Tees, hoodies, varsity jackets — designed with the community, made for the community. Founded in 2023 at IIT Jodhpur, now serving students and alumni across 23 IITs.",
+    },
+    {
+      name: "Crayonz",
+      url: "crayonz.ai",
+      paragraph:
+        "A creator-led merchandise platform with three layers: a marketplace where independent creators design and sell their own merch, an AI design studio that turns ideas into print-ready apparel in seconds, and a SaaS layer that lets other brands plug the same engine into their storefronts.",
+    },
   ],
+  closing:
+    "Two surface areas for the same bet — that the next generation of consumer brands will be built around AI-native creation, community participation, and design that actually means something.",
 };
 
 export const founders = {
@@ -75,9 +86,21 @@ export const connect = {
   eyebrow: "Get in touch",
   // Display headline is hard-coded in Connect.astro for the italic mix.
   email: "hello@aivolvix.in",
-  socials: [
-    { name: "LinkedIn", url: "https://linkedin.com/company/aivolvix" },
-    { name: "Instagram", url: "https://instagram.com/aivolvix" },
+  // Aivolvix itself has no social presence — follow the brands directly.
+  brandSocials: [
+    {
+      brand: "IITian Vibes",
+      links: [
+        { name: "Instagram", url: "https://www.instagram.com/iitian.vibess/" },
+        { name: "LinkedIn", url: "https://www.linkedin.com/company/iitian-vibes-400093337" },
+      ],
+    },
+    {
+      brand: "Crayonz",
+      links: [
+        { name: "X / Twitter", url: "https://x.com/crayonz_ai" },
+      ],
+    },
   ],
 };
 

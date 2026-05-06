@@ -12,8 +12,24 @@ import { work } from "../content/copy";
       </h2>
     </div>
 
-    <div class="space-y-7 text-body text-base sm:text-lg leading-[1.7] max-w-2xl">
-      {work.paragraphs.map((p) => <p>{p}</p>)}
+    <div class="space-y-10 max-w-2xl">
+      {work.brands.map((b) => (
+        <div>
+          <p class="font-mono text-eyebrow tracking-[0.2em] uppercase text-accent-gold mb-2">
+            {b.url}
+          </p>
+          <h3 class="font-display text-xl sm:text-2xl font-bold text-ink leading-tight mb-3">
+            {b.name}
+          </h3>
+          <p class="text-body text-base sm:text-lg leading-[1.7]">
+            {b.paragraph}
+          </p>
+        </div>
+      ))}
+
+      <p class="text-body text-base sm:text-lg leading-[1.7] pt-6 border-t border-rule italic">
+        {work.closing}
+      </p>
     </div>
   </div>
 </section>
