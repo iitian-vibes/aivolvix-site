@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import { legalPage } from "../content/copy";
+---
+<Layout title="Legal — Aivolvix" description="Corporate registration details for Aivolvix Private Limited." pathname="/legal">
+  <main class="px-6 sm:px-10 pt-32 sm:pt-40 pb-20">
+    <div class="max-w-2xl mx-auto">
+      <p class="font-mono text-eyebrow tracking-[0.2em] uppercase text-muted mb-3">
+        Aivolvix Private Limited
+      </p>
+      <h1 class="font-display text-[clamp(2rem,5vw,3rem)] leading-[1.05] tracking-[-0.02em] text-ink mb-10 font-light">
+        <em class="italic font-normal">{legalPage.title}.</em>
+      </h1>
+
+      <div class="space-y-5 text-body text-base sm:text-lg leading-[1.7]">
+        {legalPage.body.map((p) => <p>{p}</p>)}
+      </div>
+
+      <p class="mt-12">
+        <a href="/" class="font-mono text-eyebrow tracking-[0.2em] uppercase text-accent-gold hover:text-ink transition-colors">
+          ← Back home
+        </a>
+      </p>
+    </div>
+  </main>
+  <Footer />
+</Layout>
