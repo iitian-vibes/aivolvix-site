@@ -15,7 +15,6 @@ export default function BrandCard({ name, tagline, url, preview }: Props) {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`Visit ${name} — ${tagline}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onFocus={() => setHovered(true)}
